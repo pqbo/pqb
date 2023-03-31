@@ -1,0 +1,8 @@
+server:
+  port: 8089
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://172.18.30.183:3306/test?serverTimezone=GMT%2B8&useSSL=true
+    username: root
+    password: qlm123456

@@ -1,0 +1,9 @@
+server:
+  port: 8089
+spring:
+  data:
+    mongodb:
+      uri: mongodb://root:123456@172.18.30.183:27017/qianlima
+#      uri: mongodb://qlmdbReader:bxunGmmheoghN015@127.0.0.1:8891/qlmdb
+      # 也可以使用admin 数据库中的用户进行连接  统一到admin 数据库进行认证
+      # admin 用户认证 url 写法： mongodb://账户:密码%40@ip:端口/数据库名?authSource=admin&authMechanism=SCRAM-SHA-1

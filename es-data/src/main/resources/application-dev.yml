@@ -1,0 +1,10 @@
+server:
+  port: 8089
+elasticsearch:
+  connectTimeOut: 100000
+  socketTimeOut: 500000
+  connectionRequestTimeOut: 100000
+  maxConnectNum: 30
+  maxConnectPerRoute: 10
+  keepAliveMinutes: 100
+  es-address: 47.104.90.126:9200
