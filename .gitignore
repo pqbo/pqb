@@ -1,0 +1,5 @@
+# Project exclude paths
+/common/target/
+/es-data/target/
+/mongo-data/target/
+/mysql-data/target/
