@@ -14,6 +14,7 @@
         <module>mysql-data</module>
         <module>common</module>
         <module>likou-algorithm</module>
+        <module>rocket-data</module>
     </modules>
 
     <properties>

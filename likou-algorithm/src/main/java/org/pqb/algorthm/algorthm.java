@@ -286,12 +286,9 @@ public class algorthm {
      *
      *
      * 进阶: 如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
-     * @param args
+     * @param
      */
 
-    public boolean isAnagram(String s, String t) {
-
-    }
     public static void main(String[] args) {
         System.out.println(countValidWords("-"));
     }
