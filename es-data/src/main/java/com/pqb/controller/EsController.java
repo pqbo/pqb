@@ -77,17 +77,20 @@ public class EsController {
         BoolQueryBuilder totalFilter = QueryBuilders.boolQuery()
 
                 .filter(QueryBuilders.rangeQuery("updatetime").gte(start).lt(end))
-//                .filter(QueryBuilders.rangeQuery("notice_segment_type").gte(10).lt(11))
+//                        .filter(QueryBuilders.existsQuery("typeTags"))
+                                .filter(QueryBuilders.existsQuery("zhaobiaoRange"))
+                                .filter(QueryBuilders.existsQuery("service_category_tags"));
+//                .filter(QueryBuilders.rangeQuery("notice_segment_type").gte(10).lt(13));
 //                .filter(QueryBuilders.rangeQuery("catid").gte(0).lte(100 ));
 //        .filter(QueryBuilders.rangeQuery("updatetime").gte(start).lte(end))
-                .filter(QueryBuilders.rangeQuery("progid").gte(3).lt(6 ));
+//                .filter(QueryBuilders.rangeQuery("progid").gte(3).lt(4))
+//                .filter(QueryBuilders.existsQuery("attachment_content_details"))
+//                        .filter(QueryBuilders.rangeQuery("extract_budget").lte(0));
 //
 //                .filter(QueryBuilders.termQuery("progid", 3));
-
-
         sourceBuilder.query(totalFilter);
 
-        sourceBuilder.size(3000);
+        sourceBuilder.size(5000);
 
         sourceBuilder.fetchSource(new String[]{"id"}, null);
 
@@ -102,6 +105,7 @@ public class EsController {
         SearchRequest searchRequest = new SearchRequest();
 
         searchRequest.indices("notice_info");
+//        searchRequest.indices("system_notice_info_search_all");
 
         searchRequest.source(sourceBuilder);
 
@@ -132,14 +136,17 @@ public class EsController {
     @ResponseBody
     @GetMapping(value = "/getData")
     public void getdata() throws Exception{
-//        Long start =1643644800L;
-//        for (int i = 0; i < 38; i++) {
-//            Long end = start+86400L;
+//        Long end =1680331083L;
+//        for (int i = 100; i < 101; i++) {
+//            Long start = end-86400L;
 //            log.info(start+"-------------"+end);
-//            randomUnitNature(start,end,"D:\\"+i+".txt");
-//            start =end;
+//            randomUnitNature(start,end,"D:\\"+"ssss"+".txt");
+//            end =start;
 //        }
-        randomUnitNature(1616811261L,1641015633L,"D:\\i11110.txt");
+        for (int i = 0; i <20 ; i++) {
+            randomUnitNature(1657446176L,1688982176L,"D:\\cy.txt");
+        }
+
     }
 }
 

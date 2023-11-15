@@ -1,5 +1,5 @@
 server:
-  port: 8089
+  port: 8087
 elasticsearch:
   connectTimeOut: 100000
   socketTimeOut: 500000
@@ -8,3 +8,4 @@ elasticsearch:
   maxConnectPerRoute: 10
   keepAliveMinutes: 100
   es-address: 47.104.90.126:9200
+#  es-address: 172.18.30.46:9200

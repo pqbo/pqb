@@ -2,10 +2,9 @@ package com.pqb.controller;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCursor;
-import com.pqb.bean.BiddingTypeDetailBean;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.Document;
-import org.example.utils.ThreadPoolExecuteUtils;
+import org.pqb.utils.ThreadPoolExecuteUtils;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
