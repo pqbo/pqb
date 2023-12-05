@@ -258,38 +258,90 @@ public class algorthm {
             return num ;
     }
 
+
     /**
-     * 242. 有效的字母异位词
-     * 简单
-     * 827
+     * 2390. 从字符串中移除星号
+     * 提示
+     * 中等
+     * 33
      * 相关企业
-     * 给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+     * 给你一个包含若干星号 * 的字符串 s 。
      *
-     * 注意：若 s 和 t 中每个字符出现的次数都相同，则称 s 和 t 互为字母异位词。
+     * 在一步操作中，你可以：
      *
+     * 选中 s 中的一个星号。
+     * 移除星号 左侧 最近的那个 非星号 字符，并移除该星号自身。
+     * 返回移除 所有 星号之后的字符串。
      *
+     * 注意：
      *
-     * 示例 1:
-     *
-     * 输入: s = "anagram", t = "nagaram"
-     * 输出: true
-     * 示例 2:
-     *
-     * 输入: s = "rat", t = "car"
-     * 输出: false
+     * 生成的输入保证总是可以执行题面中描述的操作。
+     * 可以证明结果字符串是唯一的。
      *
      *
-     * 提示:
+     * 示例 1：
      *
-     * 1 <= s.length, t.length <= 5 * 104
-     * s 和 t 仅包含小写字母
+     * 输入：s = "leet**cod*e"
+     * 输出："lecoe"
+     * 解释：从左到右执行移除操作：
+     * - 距离第 1 个星号最近的字符是 "leet**cod*e" 中的 't' ，s 变为 "lee*cod*e" 。
+     * - 距离第 2 个星号最近的字符是 "lee*cod*e" 中的 'e' ，s 变为 "lecod*e" 。
+     * - 距离第 3 个星号最近的字符是 "lecod*e" 中的 'd' ，s 变为 "lecoe" 。
+     * 不存在其他星号，返回 "lecoe" 。
+     * 示例 2：
+     *
+     * 输入：s = "erase*****"
+     * 输出：""
+     * 解释：整个字符串都会被移除，所以返回空字符串。
      *
      *
-     * 进阶: 如果输入字符串包含 unicode 字符怎么办？你能否调整你的解法来应对这种情况？
-     * @param
+     * 提示：
+     *
+     * 1 <= s.length <= 105
+     * s 由小写英文字母和星号 * 组成
+     * s 可以执行上述操作
+     * @param s
      */
+    public static String removeStars(String s) {
+        StringBuilder rs = new StringBuilder();
+        // 遍历每个字符
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == '*') {
+                // 尾部移除一位
+                rs.deleteCharAt(rs.length() - 1);
+            } else {
+                rs.append(c);
+            }
+        }
+
+        return rs.toString();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public static void main(String[] args) {
-        System.out.println(countValidWords("-"));
+        System.out.println(removeStars("erase*****"));
     }
 }

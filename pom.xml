@@ -15,6 +15,7 @@
         <module>common</module>
         <module>likou-algorithm</module>
         <module>rocket-data</module>
+        <module>mybatis</module>
     </modules>
 
     <properties>
